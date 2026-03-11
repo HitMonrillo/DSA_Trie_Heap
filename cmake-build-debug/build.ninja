@@ -67,6 +67,12 @@ build CMakeFiles/DSA_Trie_Heap.dir/Trie.cpp.o: CXX_COMPILER__DSA_Trie_Heap_unsca
   OBJECT_DIR = CMakeFiles/DSA_Trie_Heap.dir
   OBJECT_FILE_DIR = CMakeFiles/DSA_Trie_Heap.dir
 
+build CMakeFiles/DSA_Trie_Heap.dir/DataLoader.cpp.o: CXX_COMPILER__DSA_Trie_Heap_unscanned_Debug /Users/murilinho/CLionProjects/DSA_Trie_Heap/DataLoader.cpp || cmake_object_order_depends_target_DSA_Trie_Heap
+  DEP_FILE = CMakeFiles/DSA_Trie_Heap.dir/DataLoader.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/DSA_Trie_Heap.dir
+  OBJECT_FILE_DIR = CMakeFiles/DSA_Trie_Heap.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DSA_Trie_Heap
@@ -75,7 +81,7 @@ build CMakeFiles/DSA_Trie_Heap.dir/Trie.cpp.o: CXX_COMPILER__DSA_Trie_Heap_unsca
 #############################################
 # Link the executable DSA_Trie_Heap
 
-build DSA_Trie_Heap: CXX_EXECUTABLE_LINKER__DSA_Trie_Heap_Debug CMakeFiles/DSA_Trie_Heap.dir/main.cpp.o CMakeFiles/DSA_Trie_Heap.dir/MinHeap.cpp.o CMakeFiles/DSA_Trie_Heap.dir/Trie.cpp.o
+build DSA_Trie_Heap: CXX_EXECUTABLE_LINKER__DSA_Trie_Heap_Debug CMakeFiles/DSA_Trie_Heap.dir/main.cpp.o CMakeFiles/DSA_Trie_Heap.dir/MinHeap.cpp.o CMakeFiles/DSA_Trie_Heap.dir/Trie.cpp.o CMakeFiles/DSA_Trie_Heap.dir/DataLoader.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.2.sdk
   OBJECT_DIR = CMakeFiles/DSA_Trie_Heap.dir
   POST_BUILD = :

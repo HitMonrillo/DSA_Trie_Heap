@@ -7,4 +7,5 @@ add_executable(DSA_Trie_Heap main.cpp
         DataLoader.h
         MinHeap.h
         MinHeap.cpp
-        Trie.cpp)
+        Trie.cpp
+        DataLoader.cpp)
