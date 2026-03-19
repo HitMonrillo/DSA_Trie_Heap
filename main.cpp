@@ -5,8 +5,6 @@
 using namespace std;
 
 int main() {
-    //functions for reading in CSV and processing it will go here
-    
     cout << "--------------------\n" << "Scrabble Word Finder\n" << "---------------------" << endl;
 
     bool running = true;
@@ -35,7 +33,9 @@ int main() {
                 }
             }
         }
-            
+
+        //functions for reading in CSV and processing it will go here
+        
         auto startTrie = high_resolution_clock::now();                                            //Timing trie
         //Function that runs trie here, store result in array bestWords
         auto stopTrie = high_resolution_clock::now();
