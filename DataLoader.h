@@ -7,7 +7,7 @@ public:
   DataLoader();
   ~DataLoader();
 
-  vector<tuple<string, int>> dictionaryLoader;
+  vector<tuple<string, int>> loadDictionary(string filename);
   bool isValidLength(string currWord);
   bool hasValidChars(string currWord);
   int valueGenerator(string currWord);
