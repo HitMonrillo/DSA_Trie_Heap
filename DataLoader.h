@@ -1,11 +1,11 @@
 
-#ifndef DATALOADER_H
-#define DATALOADER_H
+#ifndef DICTIONARY_H
+#define DICTIONARY_H
 
-class DataLoader {
+class Dictionary {
 public:
-  DataLoader();
-  ~DataLoader();
+  Dictionary();
+  ~Dictionary();
 
   vector<tuple<string, int>> loadDictionary(string filename);
   bool isValidLength(string currWord);
@@ -13,4 +13,4 @@ public:
   int valueGenerator(string currWord);
 };
 
-#endif DATALOADER_H
+#endif DICTIONARY_H
