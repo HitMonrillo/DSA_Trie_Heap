@@ -5,6 +5,42 @@
 #include <chrono>
 #include <cctype>
 using namespace std;
+//Helpers:
+int calculateScore(string word) {
+    int scores[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+    int total = 0;
+    for (int i =0 ; i <word.length(); i++) {
+        if (word[i] == '!')
+            continue;
+        total += scores[toupper(word[i])- 'A'];
+    } return total;
+}
+
+bool canForm(string word, string playerLetters) {
+    int available[26] = {0};
+    int blanks = 0;
+    for (int i = 0; i < playerLetters.length(); i++) {
+        if (playerLetters[i] == '!') {
+            blanks++;
+        }
+        else {
+            available[toupper(playerLetters[i]) - 'A']++;
+        }
+        for (int i = 0; i <word.length(); i++) {
+            int index = toupper(word[i] - 'A');
+            if (available[index] > 0) {
+                available[index]--;
+            }
+            else if (blanks > 0) {
+                blanks--;
+            }
+            else {
+                return false;
+        }
+    }
+return true;
+}
+
 
 int main() {
     cout << "--------------------\n" << "Scrabble Word Finder\n" << "---------------------" << endl;
