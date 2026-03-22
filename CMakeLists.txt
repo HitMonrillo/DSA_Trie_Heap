@@ -4,8 +4,8 @@ project(DSA_Trie_Heap)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(DSA_Trie_Heap main.cpp
-        DataLoader.h
+        Dictionary.h
         MinHeap.h
         MinHeap.cpp
         Trie.cpp
-        DataLoader.cpp)
+        Dictionary.cpp)
