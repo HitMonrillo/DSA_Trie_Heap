@@ -1,16 +1,16 @@
-//
-// Created by Murilo Matos on 3/9/26.
-//
 
-#ifndef DATALOADER_H
-#define DATALOADER_H
+#ifndef DICTIONARY_H
+#define DICTIONARY_H
 
+class Dictionary {
+public:
+  Dictionary();
+  ~Dictionary();
 
-
-class DataLoader {
-
+  unordered_map<string, int> loadDictionary(string filename);
+  bool isValidLength(string currWord);
+  bool hasValidChars(string currWord);
+  int valueGenerator(string currWord);
 };
 
-
-
-#endif //DATALOADER_H
+#endif DICTIONARY_H
