@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <array>
 #include <chrono>
 #include <cctype>
 using namespace std;
@@ -11,8 +13,8 @@ int main() {
     while (running) {
         string userLetters = "";
         int userContinue;
-        array bestWords = {};
-        bool validWord = false;
+        vector<string> bestWords = {};
+        bool validWord = true;
         
         cout << "Enter your letters (don't include spaces, use "!" to denote blank tiles, ex. "AREIG!P"): " << endl;
         cin >> userLetters;
@@ -24,8 +26,9 @@ int main() {
         }
 
         while (userLetters.length() != 7 || !validWord) {
-            cout << "Invalid input, please enter 7 letters with no spaces, use "!" to denote blank tiles: " << endl;            //Printing error message & repeating prompt if input is invalid
-            cin >> useLetters;
+            cout << "Invalid input, please enter 7 letters with no spaces, use \"!\" to denote blank tiles: " << endl;            //Printing error message & repeating prompt if input is invalid
+            cin >> userLetters;
+            validWord = true;
            
             for (int i=0; i<userLetters.length(); i++) {
                 if (!isalpha(userLetters[i]) && (userLetters[i] != '!')) {
@@ -44,9 +47,19 @@ int main() {
         //Function that runs heap here
         auto stopHeap = high_resolution_clock::now();
         
-        cout << "10 Best Words: " << bestWords << endl;                                            //Printing results
-        cout << "Trie Runtime: " << stopTrie << "microseconds" << endl;
-        cout << "Min Heap Runtime: " << stopHeap << "microseconds" << endl;
+        cout << "10 Best Words: ";                                                                 //Printing results
+        for (int j=0; j<bestWords.size();j++) {
+            if (j==0) {
+                cout << bestWords[j];
+            } else {
+                cout << ", " << bestWords[j];
+            }
+        }
+
+        auto trieDuration = duration_cast<microseconds>(stopTrie-startTrie);                       //Printing runtimes
+        cout << "Trie Runtime: " << trieDuration.count() << "microseconds" << endl;
+        auto heapDuration = duration_cast<microseconds>(stopHeap-startHeap);
+        cout << "Min Heap Runtime: " << heapDuration.count() << "microseconds" << endl;
 
         cout << "\nDo you want to continue?" << endl;                                              //Printing continue menu
         cout << "1. Try another set of letters" << endl;
@@ -57,7 +70,7 @@ int main() {
             cout << "Invalid selection, please try again." << endl; 
             cout << "1. Try another set of letters" << endl;
             cout << "2. Exit" << endl;
-            cin << userContinue;
+            cin >> userContinue;
         }
 
         if (userContinue == 2) {                                                                    //Exiting program if 2 is entered
