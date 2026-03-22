@@ -5,6 +5,7 @@
 #include <chrono>
 #include <cctype>
 #include "MinHeap.h"
+#include "Dictionary.h"
 using namespace std;
 using namespace std::chrono;
 //Helpers:
@@ -76,14 +77,14 @@ bool canForm(string word, string playerLetters) {
                 }
             }
 
-            //functions for reading in CSV and processing it will go here
+            Dictionary dict;
+            vector<string> dictionary = dict.loadDictionary("scrabbleDictionary.csv", userLetters);
 
             auto startTrie = high_resolution_clock::now();                                            //Timing trie
             //Function that runs trie here, store result in vector bestWords
             auto stopTrie = high_resolution_clock::now();
 
             auto startHeap = high_resolution_clock::now();                                            //Timing min heap
-            vector<string> dictionary = {}; // placeholder until Dictionary class is implemented
             MinHeap minHeap;
             for (int i =0; i <dictionary.size(); i++) {
                 string word = dictionary[i];
