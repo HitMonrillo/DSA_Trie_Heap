@@ -41,7 +41,7 @@ bool canForm(string word, string playerLetters) {
 vector<string> Dictionary::loadDictionary (string filename, string userLetters) {
   vector<string> editedDict = {};
   
-  ifstream ogDict("scrabbleDictionary.csv");                  //Load dictionary file into ogDict
+  ifstream ogDict(filename);                  //Load dictionary file into ogDict
   if (!ogDict.is_open()) {
     cout << "Could not open dictionary file: " << filename << endl;
     return editedDict;
@@ -50,7 +50,7 @@ vector<string> Dictionary::loadDictionary (string filename, string userLetters) 
   string currWord;    
   while (getline(ogDict, currWord)) {                        //Read each word into currWord
     if (isValidLength(currWord) && canForm(currWord, userLetters)) {                              //If currWord length and chars are valid,
-      editedDict.insert(currWord);                                                     //add to dict
+      editedDict.push_back(currWord);                                                     //add to dict
     }
   }
   
