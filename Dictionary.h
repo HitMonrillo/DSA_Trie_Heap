@@ -14,4 +14,4 @@ public:
   vector<string> loadDictionary(string filename, string userLetters);
 };
 
-#endif DICTIONARY_H
+#endif // DICTIONARY_H 
