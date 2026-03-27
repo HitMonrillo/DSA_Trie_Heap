@@ -10,14 +10,14 @@ Dictionary::Dictionary(){}
 
 Dictionary::~Dictionary(){}
 
-bool isValidLength(string currWord) {                      //Weed out all words with length greater than 8
+bool isValidLength(const string& currWord) {                      //Weed out all words with length greater than 8
   if (currWord.length() > 8) {
     return false;
   }
   return true;
 }
 
-bool canForm(string word, string playerLetters) {
+bool canForm(const string& word, const string& playerLetters) {
     int available[26] = {0};
     int blanks = 0;
     for (int i = 0; i < playerLetters.length(); i++) {
@@ -38,7 +38,7 @@ bool canForm(string word, string playerLetters) {
     return true;
 }
 
-vector<string> Dictionary::loadDictionary (string filename, string userLetters) {
+vector<string> Dictionary::loadDictionary (const string& filename, const string& userLetters) {
   vector<string> editedDict = {};
   
   ifstream ogDict(filename);                  //Load dictionary file into ogDict
