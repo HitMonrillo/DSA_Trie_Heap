@@ -11,7 +11,12 @@
 
 using namespace std;
 
+struct TrieNode {
+    array<TrieNode*, 26> children;
+    bool isEnd;
 
+    TrieNode();
+};
 
 class Trie {
 private:
@@ -26,6 +31,8 @@ public:
 
     void insert(const string& word);
     bool contains(const string& word);
+
+    vector<string> findWordsPossible(const string& LettersGiven) const;
 };
 
 

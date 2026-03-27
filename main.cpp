@@ -6,6 +6,7 @@
 #include <cctype>
 #include "MinHeap.h"
 #include "Dictionary.h"
+#include "Trie.h"
 using namespace std;
 using namespace std::chrono;
 //Helpers:
@@ -55,6 +56,11 @@ int main() {
 
         auto startTrie = high_resolution_clock::now();                                            //Timing trie
         //Function that runs trie here, store result in vector bestWords
+        Trie trie;
+        for (int i=0; i<dictionary.size(); i++) {
+            trie.insert(dictionary[i]);
+        }
+        bestWords = trie.findWordsPossible(userLetters);
         auto stopTrie = high_resolution_clock::now();
 
         auto startHeap = high_resolution_clock::now();                                            //Timing min heap
