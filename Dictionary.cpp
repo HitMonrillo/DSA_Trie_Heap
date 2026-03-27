@@ -6,10 +6,6 @@
 #include <cctype>
 using namespace std;
 
-Dictionary::Dictionary(){}
-
-Dictionary::~Dictionary(){}
-
 bool isValidLength(const string& currWord) {                      //Weed out all words with length greater than 8
   if (currWord.length() > 8) {
     return false;
