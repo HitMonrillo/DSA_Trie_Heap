@@ -40,6 +40,11 @@ void Trie::insert(const string &word) {
     TrieNode* current = root;
     for (int i = 0; i < cleaned.size(); i++) {
         int index = toupper((unsigned char)cleaned[i]) - 'A';
+
+        if (index >= 0 && index < 26) {
+            continue; // Just making sure that it is cleaned and it is a good letter;
+        }
+
         if (current->children[index] == nullptr) {
             current->children[index] = new TrieNode();
         }
