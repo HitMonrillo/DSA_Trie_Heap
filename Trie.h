@@ -20,9 +20,9 @@ struct TrieNode {
 
 class Trie {
 private:
-    Trie* root;
+    TrieNode* root;
 
-    void Destroy(Trie* node);
+    void Destroy(TrieNode* node);
 
 public:
     Trie();
