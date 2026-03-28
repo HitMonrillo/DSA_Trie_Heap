@@ -96,13 +96,13 @@ int main() {
         cout << "Min Heap Runtime: " << heapDuration.count() << "microseconds" << endl;
 
         cout << "\nDo you want to continue?" << endl;                                              //Printing continue menu
-        cout << "1. Try another set of letters" << endl;
+        cout << "1. Yes!" << endl;
         cout << "2. Exit" << endl;
         cin >> userContinue;
 
         while (userContinue != 1 && userContinue != 2) {                                           //Printing error message & repeating prompt if input is invalid
             cout << "Invalid selection, please try again." << endl;
-            cout << "1. Try another set of letters" << endl;
+            cout << "1. Yes!" << endl;
             cout << "2. Exit" << endl;
             cin >> userContinue;
         }
