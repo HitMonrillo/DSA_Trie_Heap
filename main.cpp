@@ -30,8 +30,9 @@ int main() {
         vector<string> bestWords = {};
         bool validWord = true;
 
-        cout << "Enter your letters (don't include spaces, use \"!\" to denote blank tiles, ex. \"AREIG!P\"): " << endl;
+        cout << "Enter up to 7 letters (No spaces, use \"!\" to denote blank tiles, ex. \"AREIG!P\"): " << endl;
         cin >> userLetters;
+        userLetters = "!" + userLetters;
 
         for (int i=0; i<userLetters.length(); i++) {                                            //Checking validity of input
             if (!isalpha(userLetters[i]) && (userLetters[i] != '!')) {
@@ -39,10 +40,18 @@ int main() {
             }
         }
 
-        while (userLetters.length() != 7 || !validWord) {
-            cout << "Invalid input, please enter 7 letters with no spaces, use \"!\" to denote blank tiles: " << endl;            //Printing error message & repeating prompt if input is invalid
+        while (userLetters.length() != 8 || !validWord) {
+            cout << "Invalid input. Enter up to 7 letters (No spaces, use \"!\" to denote blank tiles, ex. \"AREIG!P\"): " << endl;            //Printing error message & repeating prompt if input is invalid
+            cout << "Enter 2 to Exit" << endl;
             cin >> userLetters;
+
+            if (userLetters == "2") {
+                cout << "Thanks for using Scrabble Word Finder!" << endl;
+                return 0;
+            }
+            
             validWord = true;
+            userLetters = "!" + userLetters;
 
             for (int i=0; i<userLetters.length(); i++) {
                 if (!isalpha(userLetters[i]) && (userLetters[i] != '!')) {
@@ -99,6 +108,7 @@ int main() {
         }
 
         if (userContinue == 2) {                                                                    //Exiting program if 2 is entered
+            cout << "Thanks for using Scrabble Word Finder!" << endl;
             running = false;
         }
     }
