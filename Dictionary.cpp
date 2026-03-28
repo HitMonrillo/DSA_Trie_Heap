@@ -22,10 +22,12 @@ bool canForm(const string& word, const string& playerLetters) {
         else
             available[toupper(playerLetters[i]) - 'A']++;
     }
-    for (int i = 0; i < word.length()-numBlanks; i++) {                       
+    for (int i = 0; i < word.length(); i++) {                       
         int index = toupper(word[i]) - 'A';
         if (available[index] > 0)
             available[index]--;
+        else if (numBlanks > 0)
+            numBlanks--;
         else
             return false;
     }
