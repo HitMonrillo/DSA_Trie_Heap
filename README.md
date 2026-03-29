@@ -17,3 +17,15 @@ Use a C++ compiler (like `g++`) to link all source files:
 
 ```bash
 g++ -std=c++11 main.cpp MinHeap.cpp Trie.cpp Dictionary.cpp -o ScrabbleFinder
+```
+
+1. Build using the code above
+2. cd to the folder that contains scrabbleDictionary.csv.
+3. Run:
+./build/DSA_Trie_Heap
+or, if you used g++:
+./ScrabbleFinder
+Windows (same folder as the CSV):
+build\DSA_Trie_Heap.exe
+4. Enter up to 7 letters when prompted, no spaces. Use ! for a blank. Example: AREIG!P.
+5. Output includes 10 Best Words (heap), then Trie Runtime and Min Heap Runtime in microseconds. Choose 1 for another rack or 2 to exit.
